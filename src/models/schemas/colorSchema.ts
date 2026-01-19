@@ -1,5 +1,5 @@
-import mongoose, { Schema } from 'mongoose';
-import { SizeVariant, ColorVariant } from '../../types/index.js';
+import mongoose from 'mongoose';
+import { SizeVariant } from '../../types/index.js';
 
 /**
  * Size schema for product variants

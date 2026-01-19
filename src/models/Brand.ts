@@ -1,4 +1,4 @@
-import mongoose, { Schema, Model } from 'mongoose';
+import mongoose from 'mongoose';
 import { Document } from 'mongoose';
 import { getDb } from '../config/database.js';
 import { MODEL_NAMES } from '../constants/index.js';

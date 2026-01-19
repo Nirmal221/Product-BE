@@ -26,10 +26,11 @@ app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
 // Swagger Documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
+app.use('/api-docs', ...(swaggerUi.serve as any));
+app.use('/api-docs', swaggerUi.setup(swaggerSpec as any, {
   customCss: '.swagger-ui .topbar { display: none }',
   customSiteTitle: 'Products API Documentation',
-}));
+}) as any);
 
 // Health check route
 app.get('/health', (_req, res) => {

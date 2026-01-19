@@ -72,8 +72,9 @@ export interface IProduct extends Document {
 }
 
 // Shoe interface (for backward compatibility, extends IProduct)
-export interface IShoe extends IProduct {
-  productType: 'shoes';
+// Note: productType is ObjectId in the actual model, but this interface uses string for type compatibility
+export interface IShoe extends Omit<IProduct, 'productType' | 'category'> {
+  productType: 'shoes' | import('mongoose').Types.ObjectId;
   category: ShoeCategory;
 }
 

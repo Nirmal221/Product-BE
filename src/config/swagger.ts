@@ -146,14 +146,6 @@ const swaggerDefinition = {
               $ref: '#/components/schemas/ColorVariant',
             },
           },
-          images: {
-            type: 'array',
-            description: 'General product images',
-            items: {
-              type: 'string',
-            },
-            example: ['product-1.jpg', 'product-2.jpg'],
-          },
           isActive: {
             type: 'boolean',
             description: 'Whether the product is active',

@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { uploadImage, uploadImageFromBase64 } from '../services/cloudinary.js';
+import { uploadImageFromBase64 } from '../services/cloudinary.js';
 import { ApiResponse } from '../types/index.js';
 
 /**
@@ -38,7 +38,7 @@ export const uploadImageToCloudinary = async (req: Request, res: Response<ApiRes
       // Support both array and comma-separated string
       uploadOptions.tags = Array.isArray(tags) 
         ? tags 
-        : tags.split(',').map(t => t.trim()).filter(t => t.length > 0);
+        : (tags as string).split(',').map((t: string) => t.trim()).filter((t: string) => t.length > 0);
     }
 
     // Upload image using Cloudinary service

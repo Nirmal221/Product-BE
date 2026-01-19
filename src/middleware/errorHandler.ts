@@ -6,9 +6,9 @@ import { CustomError, ApiResponse } from '../types/index.js';
  */
 export const errorHandler = (
   err: CustomError,
-  req: Request,
+  _req: Request,
   res: Response<ApiResponse>,
-  next: NextFunction
+  _next: NextFunction
 ): void => {
   const statusCode = err.statusCode || 500;
   const message = err.message || 'Internal Server Error';
@@ -25,7 +25,7 @@ export const errorHandler = (
  */
 export const notFound = (
   req: Request,
-  res: Response<ApiResponse>,
+  _res: Response<ApiResponse>,
   next: NextFunction
 ): void => {
   const error: CustomError = new Error(`Not Found - ${req.originalUrl}`);
