@@ -664,6 +664,46 @@ const swaggerDefinition = {
           },
         },
       },
+      ImageUploadResponse: {
+        type: 'object',
+        properties: {
+          publicId: {
+            type: 'string',
+            description: 'Cloudinary public ID',
+            example: 'products/image-123',
+          },
+          url: {
+            type: 'string',
+            description: 'Cloudinary URL (HTTP)',
+            example: 'http://res.cloudinary.com/de74gcchm/image/upload/v123/products/image-123.jpg',
+          },
+          secureUrl: {
+            type: 'string',
+            description: 'Cloudinary secure URL (HTTPS) - Use this in your application',
+            example: 'https://res.cloudinary.com/de74gcchm/image/upload/v123/products/image-123.jpg',
+          },
+          width: {
+            type: 'number',
+            description: 'Image width in pixels',
+            example: 1920,
+          },
+          height: {
+            type: 'number',
+            description: 'Image height in pixels',
+            example: 1080,
+          },
+          format: {
+            type: 'string',
+            description: 'Image format',
+            example: 'jpg',
+          },
+          bytes: {
+            type: 'number',
+            description: 'File size in bytes',
+            example: 245678,
+          },
+        },
+      },
     },
   },
   tags: [
@@ -682,6 +722,10 @@ const swaggerDefinition = {
     {
       name: 'Brands',
       description: 'Brand management endpoints',
+    },
+    {
+      name: 'Images',
+      description: 'Image upload endpoints using Cloudinary',
     },
   ],
 };

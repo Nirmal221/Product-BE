@@ -9,6 +9,7 @@ import { swaggerSpec } from './config/swagger.js';
 import productRoutes from './routes/productRoutes.js';
 import productTypeRoutes from './routes/productTypeRoutes.js';
 import brandRoutes from './routes/brandRoutes.js';
+import imageRoutes from './routes/imageRoutes.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
 
 // Load environment variables
@@ -43,6 +44,7 @@ app.get('/health', (_req, res) => {
 app.use('/api/products', productRoutes);
 app.use('/api/product-types', productTypeRoutes);
 app.use('/api/brands', brandRoutes);
+app.use('/api/images', imageRoutes);
 
 // 404 handler
 app.use(notFound);
