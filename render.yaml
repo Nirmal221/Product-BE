@@ -4,16 +4,20 @@ services:
     env: node
     plan: free
     region: oregon
-    buildCommand: npm install && npm run build
-    startCommand: node dist/index.js
+    buildCommand: yarn install && yarn build
+    startCommand: yarn start
     rootDir: .
     envVars:
       - key: NODE_ENV
         value: production
       - key: PORT
         value: 10000
+      - key: MONGODB_URI
+        value: mongodb+srv://<username>:<password>@<cluster-url>/<database-name>?retryWrites=true&w=majority&appName=ShoesBackend
       # Add your other environment variables in Render dashboard:
-      # - MONGODB_URI
-      # - CLOUDINARY_CLOUD_NAME
-      # - CLOUDINARY_API_KEY
-      # - CLOUDINARY_API_SECRET
+      - key: CLOUDINARY_CLOUD_NAME
+        value: de74gcchm
+      - key: CLOUDINARY_API_KEY
+        value: 614993495448451
+      - key: CLOUDINARY_API_SECRET
+        value: xeJ4P5TF-8E7xWgUXzyM92A7NIE
